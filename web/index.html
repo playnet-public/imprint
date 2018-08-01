@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>404 - Not Found</title>
+  <link rel="icon" type="image/x-icon" href="/logo.ico">
+  <link rel="import" href="../header.html">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+
+    // Clone the <template> in the import.
+    var template = link.import.querySelector('template');
+    var clone = document.importNode(template.content, true);
+    document.querySelector('#container').appendChild(clone);
+  </script>
+
+  <div class="imprint">
+    <h1>404 - Page not found</h1>
+    Did you mean:
+    <ul>
+      <li><a class="link" href="/de">/de</a></li>
+      <li><a class="link" href="/en">/en</a></li>
+    </ul>
+  </div>
+</body>
+
+</html>

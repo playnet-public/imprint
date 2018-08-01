@@ -1,0 +1,20 @@
+steps:
+
+# build frontend image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--no-cache', '--rm=true',
+        '-t', '${_REGISTRY_}/${_IMAGE_}:${SHORT_SHA}',
+        '-t', '${_REGISTRY_}/${_IMAGE_}:latest',
+        '-f', 'Dockerfile', '.']
+
+# push frontend image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'eu.gcr.io/playnet-gce/imprint']
+
+# defs
+substitutions:
+  _NAME_: imprint
+  _GIT_HOST_: github.com
+  _REPO_: playnet-public
+  _REGISTRY_: eu.gcr.io
+  _IMAGE_: playnet-gce/imprint
