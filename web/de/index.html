@@ -5,31 +5,47 @@
   <meta charset="utf-8">
   <title>PlayNet - Impressum</title>
   <link rel="icon" type="image/x-icon" href="/logo.ico">
-  <link rel="import" href="../header.html">
+  <link rel="import" href="/templates.html">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-  <div id="container"></div>
+  <div id="start"></div>
   <script>
     var link = document.querySelector('link[rel="import"]');
     var content = link.import;
 
-    // Clone the <template> in the import.
-    var template = link.import.querySelector('template');
-    var clone = document.importNode(template.content, true);
-    document.querySelector('#container').appendChild(clone);
+    let header = link.import.getElementById('tmpl-header');
+    var headerClone = document.importNode(header.content, true);
+    document.querySelector('#start').appendChild(headerClone);
   </script>
+
 
   <div class="imprint">
     <h1>Impressum</h1>
-    <p><b>Name:</b> Kevin Wiesmueller</p>
-    <p><b>Strasse:</b> Bleichstr. 20</p>
-    <p><b>Ort:</b> 65183 Wiesbaden</p>
-    <p><b>E-Mail:</b> <a class="link" href="mailto:contact@play-net.org">contact@play-net.org</a></p>
+    <p>
+      <b>Name:</b> Kevin Wiesmueller</p>
+    <p>
+      <b>Strasse:</b> Bleichstr. 20</p>
+    <p>
+      <b>Ort:</b> 65183 Wiesbaden</p>
+    <p>
+      <b>E-Mail:</b>
+      <a class="link" href="mailto:contact@play-net.org">contact@play-net.org</a>
+    </p>
   </div>
+
+  <div id="end"></div>
+  <script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+
+    let footer = link.import.getElementById('tmpl-footer');
+    var footerClone = document.importNode(footer.content, true);
+    document.querySelector('#end').appendChild(footerClone);
+  </script>
 </body>
 
 </html>
