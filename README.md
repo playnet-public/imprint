@@ -5,11 +5,11 @@ PlayNet Imprint Container
 ## About
 
 This small repository contains our up to date imprint information in all languages.
-It is being deployed to our cluster and should be served under `https://play-net.org/imprint/<language-code>`.
+It is being deployed to our cluster and should be served under `https://imprint.play-net.org/<language-code>`.
 
 Current Examples:
-[German - https://play-net.org/imprint/de](https://play-net.org/imprint/de)
-[English - https://play-net.org/imprint/en](https://play-net.org/imprint/en)
+[German - https://imprint.play-net.org/de](https://imprint.play-net.org/de)
+[English - https://imprint.play-net.org/en](https://imprint.play-net.org/en)
 
 ## Building
 
